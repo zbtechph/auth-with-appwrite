@@ -37,10 +37,10 @@ const formSubmit = async () => {
     feedback.value = {};
     try {
         const data = await store.dispatch("handleLogin", form)
-        if(data)
-            feedback.value.styles = "bg-green-300 text-green-700";
-            feedback.value.message = "Welcome back!";
-            emit("logged-in", data)
+        if(data) emit("logged-in", data)
+            // feedback.value.styles = "bg-green-300 text-green-700";
+            // feedback.value.message = "Welcome back!";
+            
     } catch (e) {
         feedback.value.styles = "bg-red-300 text-red-700";
         feedback.value.message = e.message;
